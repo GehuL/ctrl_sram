@@ -35,6 +35,7 @@ entity ctrl_sram is
     Port ( 
            -- USER
            CLK : in STD_LOGIC;
+           RESET : in STD_LOGIC;
            Data_in : in STD_LOGIC_VECTOR (31 downto 0);
            Data_out : out STD_LOGIC_VECTOR (31 downto 0);
            Read : in STD_LOGIC;
@@ -59,6 +60,8 @@ architecture Behavioral of ctrl_sram is
     signal data_in_sig : std_logic_vector(35 downto 0);
     signal data_out_sig : std_logic_vector(35 downto 0);
 
+    signal data_in_ff : std_logic_vector(35 downto 0);
+    -- Agit comme bascule D pour décaler d'un cycle d'horloge
 
     component IOBUF_F_16
       port(
@@ -72,16 +75,14 @@ architecture Behavioral of ctrl_sram is
 begin
 
     gen_tristate: for i in 0 to 35 generate
-        buff: IOBUF_F_16 port map(data_out_sig(i), Data_sram(i), data_in_sig(i), Trig);
+        buff: IOBUF_F_16 port map(data_out_sig(i), Data_sram(i), data_in_ff(i), Trig);
     end generate gen_tristate;
     
-    data_in_sig <= "0000" & data_in;
-    data_out <= data_out_sig(31 downto 0);
-    Addr_sram <= "000" & User_Addr;
-
-    connection : process (CLK, Read, Write)
+    connection : process (CLK, RESET)
     begin
-        if(CLK'event and CLK = '1') then
+        if (RESET = '1') then
+            ETAT <= ETAT_INIT;
+        elsif (CLK'event and CLK = '1') then
             case ETAT is
                 when ETAT_INIT =>
                     ETAT <= ETAT_IDLE;
@@ -93,29 +94,48 @@ begin
                     else 
                         ETAT <= ETAT_IDLE;
                     end if;         
-            end case;        
+            end case;  
+          
         end if;   
     end process connection;
 
     act : process (ETAT)
     begin
-        case ETAT is
-            when ETAT_INIT =>
-                nRW <= '0';
-                nCKE <= '1';
-                Trig <= '0';              
-            when ETAT_IDLE =>
-                nCKE <= '0';
-                Trig <= '1';
-            when ETAT_READ =>
-                nRW <= '1';       
-                nCKE <= '0';
-                Trig <= '1';
-            when ETAT_WRITE =>
-                nRW <= '0';
-                nCKE <= '0';
-                Trig <= '0';
-        end case;
+          case ETAT is
+                when ETAT_INIT =>
+                    nRW <= '1';
+                    nCKE <= '1';
+                    Trig <= '1';
+                   -- Data_sram <= (others => 'Z');
+                when ETAT_IDLE =>
+                    nCKE <= '1';
+                    Trig <= '1';
+                    nRW <= '1';
+                when ETAT_READ =>
+                    nRW <= '1';       
+                    nCKE <= '0';
+                    Trig <= '1';
+                when ETAT_WRITE =>
+                    nRW <= '0';
+                    nCKE <= '0';
+                    Trig <= '0';
+            end case;
     end process act;
-
+    
+    dataflow : process(CLK) 
+    begin 
+        if (CLK'event and CLK = '1') then
+            case ETAT is
+                    when ETAT_INIT =>
+                        Data_out <= (others => '0');
+                        data_in_sig <= (others => '0');   
+                    when others =>
+                        Data_out <= data_out_sig(31 downto 0);
+                        Addr_sram <= "000" & User_Addr;
+                        data_in_sig <= "0000" & data_in;
+                        data_in_ff <= data_in_sig;
+           end case;
+       end if;
+    end process;
+   
 end Behavioral;

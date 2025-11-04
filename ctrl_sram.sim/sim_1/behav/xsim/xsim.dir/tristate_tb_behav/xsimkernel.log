@@ -1,0 +1,7 @@
+Running: xsim.dir/tristate_tb_behav/xsimk.exe -simmode gui -wdb tristate_tb_behav.wdb -simrunnum 0 -socket 52223
+Design successfully loaded
+Design Loading Memory Usage: 6476 KB (Peak: 6476 KB)
+Design Loading CPU Usage: 468 ms
+Simulation completed
+Simulation Memory Usage: 7024 KB (Peak: 7024 KB)
+Simulation CPU Usage: 499 ms

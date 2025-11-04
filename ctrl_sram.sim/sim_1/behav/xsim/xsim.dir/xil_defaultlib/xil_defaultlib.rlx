@@ -5,4 +5,7 @@ Nov  6 2019
 C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.srcs/sim_1/imports/CTRL_SRAM_4students/test_io/tb_test_io.vhd,1760103349,vhdl,,,,tb_test_io_vhd,,,,,,,,
 C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.srcs/sim_1/imports/CTRL_SRAM_4students/test_sram/tb_test_sram.vhd,1760106199,vhdl,,,,tb_test_sram,,,,,,,,
 C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.srcs/sim_1/imports/test_io/iob.vhd,1760087820,vhdl,,,,test_io,,,,,,,,
+C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.srcs/sim_1/new/ctrl_sram_tb.vhd,1762254083,vhdl,,,,ctrl_sram_tb,,,,,,,,
+C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.srcs/sim_1/new/tristate_tb.vhd,1762250481,vhdl,,,,tristate_tb,,,,,,,,
 C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd,1760087820,vhdl,,,,mt55l512y36f,,,,,,,,
+C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.srcs/sources_1/new/ctrl_sram.vhd,1762254851,vhdl,,,,ctrl_sram,,,,,,,,
