@@ -1,0 +1,39 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Error: Dq - tDVKH violation
+Time: 5 ns  Iteration: 1  Process: /ctrl_sram_tb/SRAM1/setup_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 5500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: CKE# - tKHEX violation
+Time: 65500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: CKE# - tKHEX violation
+Time: 105500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: RW# - tKHCX violation
+Time: 105500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 125500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 135500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 145500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 155500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 165500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 175500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 185500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: Dq - tKHDX violation
+Time: 195500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: RW# - tKHCX violation
+Time: 205500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: data_out should be equald to i
+Time: 207 ns  Iteration: 0  Process: /ctrl_sram_tb/tb  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sim_1/new/ctrl_sram_tb.vhd
+Error: Dq - tKHDX violation
+Time: 215500 ps  Iteration: 0  Process: /ctrl_sram_tb/SRAM1/hold_check  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sources_1/imports/CTRL_SRAM_4students/mt55l512y36f.vhd
+Error: data_out should be equald to i
+Time: 217 ns  Iteration: 0  Process: /ctrl_sram_tb/tb  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sim_1/new/ctrl_sram_tb.vhd
+Error: data_out should be equald to i
+Time: 227 ns  Iteration: 0  Process: /ctrl_sram_tb/tb  File: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.srcs/sim_1/new/ctrl_sram_tb.vhd
+Error: data_ou

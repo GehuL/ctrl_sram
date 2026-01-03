@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ctrl_sram_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="ctrl_sram_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1000001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="125"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/ctrl_sram_tb/CLKO_SRAM" type="logic">
+      <obj_property name="ElementShortName">CLKO_SRAM</obj_property>
+      <obj_property name="ObjectShortName">CLKO_SRAM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/nCKE" type="logic">
+      <obj_property name="ElementShortName">nCKE</obj_property>
+      <obj_property name="ObjectShortName">nCKE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/read" type="logic">
+      <obj_property name="ElementShortName">read</obj_property>
+      <obj_property name="ObjectShortName">read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/write" type="logic">
+      <obj_property name="ElementShortName">write</obj_property>
+      <obj_property name="ObjectShortName">write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/ctrl/Trig" type="logic">
+      <obj_property name="ElementShortName">Trig</obj_property>
+      <obj_property name="ObjectShortName">Trig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/nRW" type="logic">
+      <obj_property name="ElementShortName">nRW</obj_property>
+      <obj_property name="ObjectShortName">nRW</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/ctrl/ETAT" type="other">
+      <obj_property name="ElementShortName">ETAT</obj_property>
+      <obj_property name="ObjectShortName">ETAT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/ctrl/Burst" type="logic">
+      <obj_property name="ElementShortName">Burst</obj_property>
+      <obj_property name="ObjectShortName">Burst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/ctrl/Advld" type="logic">
+      <obj_property name="ElementShortName">Advld</obj_property>
+      <obj_property name="ObjectShortName">Advld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/user_addr" type="array">
+      <obj_property name="ElementShortName">user_addr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">user_addr[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/Addr_sram" type="array">
+      <obj_property name="ElementShortName">Addr_sram[18:0]</obj_property>
+      <obj_property name="ObjectShortName">Addr_sram[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/ctrl/data_in_sig" type="array">
+      <obj_property name="ElementShortName">data_in_sig[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_sig[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/Data_sram" type="array">
+      <obj_property name="ElementShortName">Data_sram[35:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_sram[35:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ctrl_sram_tb/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

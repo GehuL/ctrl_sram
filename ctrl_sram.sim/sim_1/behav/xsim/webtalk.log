@@ -2,12 +2,13 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Tue Nov  4 09:58:34 2025
-# Process ID: 14684
-# Current directory: C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim/xsim.dir/tristate_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim\webtalk.jou
+# Start of session at: Sat Jan  3 14:40:48 2026
+# Process ID: 32672
+# Current directory: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim/xsim.dir/ctrl_sram_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/lgehu/Documents/Polytech Dijon/SOC/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/lg501106/Documents/ctrl_sram/ctrl_sram.sim/sim_1/behav/xsim/xsim.dir/tristate_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Tue Nov  4 09:58:34 2025...
+source C:/Users/lgehu/Documents/Polytech -notrace
+couldn't read file "C:/Users/lgehu/Documents/Polytech": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Sat Jan  3 14:40:48 2026...

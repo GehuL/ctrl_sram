@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -47,12 +47,13 @@ component ctrl_sram is
            Read : in STD_LOGIC;
            Write : in STD_LOGIC;
            User_addr : in STD_LOGIC_VECTOR (15 downto 0);
-           
+           Burst : in STD_LOGIC;
            -- SRAM
            Data_sram : inout STD_LOGIC_VECTOR(35 downto 0);
            Addr_sram : out STD_LOGIC_VECTOR (18 downto 0);
            nCKE : out STD_LOGIC;
-           nRW : out STD_LOGIC
+           nRW : out STD_LOGIC;
+           Advld : out STD_LOGIC
            );
 end component;
 
@@ -99,8 +100,8 @@ component mt55l512y36f is
   end component;
     
 	--constants
-  	constant TCLKH    : time := 15 ns;
-  	constant TCLKL    : time := 15 ns;
+  	constant TCLKH    : time := 5 ns;
+  	constant TCLKL    : time := 5 ns;
 
 	--Inputs
 	SIGNAL CLKO_SRAM :  std_logic := '0';
@@ -111,7 +112,7 @@ component mt55l512y36f is
     signal user_addr : std_logic_vector(15 downto 0);
     signal read : std_logic;
     signal write : std_logic;
-    
+    signal Burst : std_logic;
     signal RESET : std_logic;
     
     -- SRAM
@@ -134,58 +135,100 @@ begin
     wait for TCLKH;
   end process;
   
-  ctrl : ctrl_sram port map (CLKO_SRAM, reset, data_in, data_out, read, write, user_addr,
-                            data_sram, addr_sram, nCKE, nRW);
+  ctrl : ctrl_sram port map (CLK => CLKO_SRAM, RESET => reset, Data_in => data_in, Data_out => data_out, 
+                            Read => read, Write => write, User_addr => user_addr, Burst => Burst,
+                            Data_sram => data_sram, Addr_sram => addr_sram, nCKE => nCKE, nRW => nRW, Advld => nADVLD);
 
 	-- Instantiate the Unit Under Test (UUT)
   SRAM1 : mt55l512y36f port map
-    (data_sram, addr_sram, '0', CLKO_SRAM, nCKE, nADVLD, '0',
-     '0', '0', '0', nRW, nOE, nCE, nCE2, CE2, '0');
+    (Dq => data_sram, Addr => addr_sram, Lbo_n => '0', Clk => CLKO_SRAM, Cke_n => nCKE, Ld_n => nADVLD, Bwa_n => '0',
+     Bwb_n => '0', Bwc_n => '0', Bwd_n => '0', Rw_n => nRW, Oe_n => nOE, Ce_n => nCE, Ce2_n => nCE2, Ce2 => CE2, Zz => '0');
 
     tb : PROCESS
         BEGIN
         
         -- INITIALISATION
         RESET <= '1';
-        nADVLD	<= '0';
         nOE		<= '0';
         nCE 		<= '0';
         nCE2 		<= '0';
         CE2 		<= '1';
         
-        data_in <= (others => '1');
+        Data_in <= (others => '0');
         user_addr <= (others => '0');
         
         read <= '0';
         write <= '0';
+        Burst <= '0';
         
         wait until CLKO_SRAM'event and CLKO_SRAM='1';
         wait for 2 ns;
         
-        wait for 4*(TCLKL+TCLKH);
+        wait for 5*(TCLKL+TCLKH);
+       
         RESET <= '0';
 	   
+	   -- Attend l'initialisation de la SRAM
 	    wait for 4*(TCLKL+TCLKH);
 	    
-	  
-	    
-        -- ECRITURE ADDR=0 VALUE=FFFFFFF
+        -- ECRITURE 
         write <= '1';
         
         wait for 1*(TCLKL+TCLKH);
-       
+        
+        for i in 0 to 8 loop
+            user_addr <= std_logic_vector(to_unsigned(i, user_addr'length));
+            data_in <= std_logic_vector(to_unsigned(i, data_in'length));
+            wait for 1*(TCLKL+TCLKH);
+        end loop;
+      
+        -- IDLE
         write <= '0';
+                
+       -- LECTURE ADDR=0 EXPECTED VALUE=FFFFFFF
+        read <= '1';
+       
+        wait for 1*(TCLKL+TCLKH);
+
+        for i in 0 to 8 loop
+            user_addr <= std_logic_vector(to_unsigned(i, user_addr'length));
+            assert(unsigned(data_out) = i) report "data_out should be equald to i";
+            wait for 1*(TCLKL+TCLKH);
+        end loop;
+
+        wait for 1*(TCLKL+TCLKH);
         
-        -- LECTURE ADDR=0 VALUE=FFFFFFF
-        wait for 4*(TCLKL+TCLKH);
+        read <= '0';
         
-        data_in <= (others => '0');
+        wait for 1*(TCLKL+TCLKH);
+        
+        -- ECRITURE EN MODE BURST (START ADDR=0x8 TO 0XB)
+        write <= '1';
+        
+        wait for 2*(TCLKL+TCLKH);
+        
+        Burst <= '1';
+        
+        for i in 0 to 3 loop
+            data_in <= std_logic_vector(to_unsigned(i, data_in'length));
+            wait for 1*(TCLKL+TCLKH);
+        end loop;
+        
+        -- LECTURE EN MODE BURST (START ADDR=0x08 TO 0X0B)
+        Burst <= '0'; -- On reset l'adresse  
+        write <= '0';
+        read <= '1';
+        
+        wait for 2*(TCLKL+TCLKH);
+        
+        Burst <= '1';
         
         wait for 10*(TCLKL+TCLKH);
         
         -- RESET
-        read <= '1';
+        read <= '0';
         write <= '0';
+        RESET <= '1';
         
         wait;
         

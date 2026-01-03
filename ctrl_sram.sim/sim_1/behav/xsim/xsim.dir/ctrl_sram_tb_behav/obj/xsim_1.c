@@ -48,52 +48,53 @@
 #endif
 typedef void (*funcp)(char *, char *);
 extern int main(int, char**);
-extern void execute_12(char*, char *);
-extern void execute_340(char*, char *);
-extern void execute_308(char*, char *);
-extern void execute_309(char*, char *);
-extern void execute_310(char*, char *);
-extern void execute_22(char*, char *);
+extern void execute_20(char*, char *);
+extern void execute_60(char*, char *);
 extern void execute_23(char*, char *);
+extern void execute_24(char*, char *);
 extern void execute_25(char*, char *);
 extern void execute_26(char*, char *);
-extern void execute_325(char*, char *);
-extern void execute_326(char*, char *);
-extern void execute_327(char*, char *);
-extern void execute_328(char*, char *);
-extern void execute_329(char*, char *);
-extern void execute_330(char*, char *);
-extern void execute_331(char*, char *);
-extern void execute_332(char*, char *);
-extern void execute_333(char*, char *);
-extern void execute_334(char*, char *);
-extern void execute_335(char*, char *);
-extern void execute_336(char*, char *);
-extern void execute_337(char*, char *);
-extern void execute_338(char*, char *);
-extern void execute_339(char*, char *);
+extern void execute_27(char*, char *);
+extern void execute_28(char*, char *);
+extern void execute_29(char*, char *);
+extern void execute_30(char*, char *);
+extern void execute_45(char*, char *);
+extern void execute_46(char*, char *);
+extern void execute_47(char*, char *);
+extern void execute_48(char*, char *);
+extern void execute_49(char*, char *);
+extern void execute_50(char*, char *);
+extern void execute_51(char*, char *);
+extern void execute_52(char*, char *);
+extern void execute_53(char*, char *);
+extern void execute_54(char*, char *);
+extern void execute_55(char*, char *);
+extern void execute_56(char*, char *);
+extern void execute_57(char*, char *);
+extern void execute_58(char*, char *);
+extern void execute_59(char*, char *);
 extern void transaction_0(char*, char*, unsigned, unsigned, unsigned);
 extern void vhdl_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-extern void transaction_7(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_8(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_9(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_10(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_11(char*, char*, unsigned, unsigned, unsigned);
-extern void transaction_13(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_12(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_14(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_15(char*, char*, unsigned, unsigned, unsigned);
-extern void transaction_17(char*, char*, unsigned, unsigned, unsigned);
+extern void transaction_16(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_18(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_19(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_20(char*, char*, unsigned, unsigned, unsigned);
-funcp funcTab[38] = {(funcp)execute_12, (funcp)execute_340, (funcp)execute_308, (funcp)execute_309, (funcp)execute_310, (funcp)execute_22, (funcp)execute_23, (funcp)execute_25, (funcp)execute_26, (funcp)execute_325, (funcp)execute_326, (funcp)execute_327, (funcp)execute_328, (funcp)execute_329, (funcp)execute_330, (funcp)execute_331, (funcp)execute_332, (funcp)execute_333, (funcp)execute_334, (funcp)execute_335, (funcp)execute_336, (funcp)execute_337, (funcp)execute_338, (funcp)execute_339, (funcp)transaction_0, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_7, (funcp)transaction_8, (funcp)transaction_9, (funcp)transaction_10, (funcp)transaction_11, (funcp)transaction_13, (funcp)transaction_14, (funcp)transaction_15, (funcp)transaction_17, (funcp)transaction_18, (funcp)transaction_19, (funcp)transaction_20};
-const int NumRelocateId= 38;
+extern void transaction_21(char*, char*, unsigned, unsigned, unsigned);
+funcp funcTab[39] = {(funcp)execute_20, (funcp)execute_60, (funcp)execute_23, (funcp)execute_24, (funcp)execute_25, (funcp)execute_26, (funcp)execute_27, (funcp)execute_28, (funcp)execute_29, (funcp)execute_30, (funcp)execute_45, (funcp)execute_46, (funcp)execute_47, (funcp)execute_48, (funcp)execute_49, (funcp)execute_50, (funcp)execute_51, (funcp)execute_52, (funcp)execute_53, (funcp)execute_54, (funcp)execute_55, (funcp)execute_56, (funcp)execute_57, (funcp)execute_58, (funcp)execute_59, (funcp)transaction_0, (funcp)vhdl_transfunc_eventcallback, (funcp)transaction_8, (funcp)transaction_9, (funcp)transaction_10, (funcp)transaction_11, (funcp)transaction_12, (funcp)transaction_14, (funcp)transaction_15, (funcp)transaction_16, (funcp)transaction_18, (funcp)transaction_19, (funcp)transaction_20, (funcp)transaction_21};
+const int NumRelocateId= 39;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/ctrl_sram_tb_behav/xsim.reloc",  (void **)funcTab, 38);
-	iki_vhdl_file_variable_register(dp + 22136);
-	iki_vhdl_file_variable_register(dp + 22192);
+	iki_relocate(dp, "xsim.dir/ctrl_sram_tb_behav/xsim.reloc",  (void **)funcTab, 39);
+	iki_vhdl_file_variable_register(dp + 17856);
+	iki_vhdl_file_variable_register(dp + 17912);
 
 
 	/*Populate the transaction function pointer field in the whole net structure */

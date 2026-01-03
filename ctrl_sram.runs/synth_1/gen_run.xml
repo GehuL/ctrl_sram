@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1762253911">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1767448064">
   <File Type="PA-TCL" Name="ctrl_sram.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="ctrl_sram_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ctrl_sram_reports.tcl"/>
